@@ -191,6 +191,59 @@ function IconBtn({ children, title, onClick }: { children: React.ReactNode; titl
   )
 }
 
+// ── Minimal markdown renderer (bold + bullets, no library) ──────────────────
+
+function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g).filter((p) => p !== '')
+  return parts.map((part, i) =>
+    part.startsWith('**') && part.endsWith('**') ? (
+      <strong key={`${keyPrefix}-${i}`} className="font-semibold text-[#111]">
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      <span key={`${keyPrefix}-${i}`}>{part}</span>
+    ),
+  )
+}
+
+function MarkdownBlock({ text }: { text: string }) {
+  const blocks = text.split('\n\n').filter(Boolean)
+
+  return (
+    <>
+      {blocks.map((block, bi) => {
+        const lines = block.split('\n').filter(Boolean)
+        return (
+          <div key={bi} className="mb-4 last:mb-0">
+            {lines.map((line, li) => {
+              const trimmed = line.trim()
+              const isBullet = trimmed.startsWith('- ') || trimmed.startsWith('• ')
+              const lineText = isBullet ? trimmed.slice(2) : line
+              const isHeaderLine = li === 0 && /\*\*[^*]+\*\*/.test(line)
+
+              return (
+                <div
+                  key={li}
+                  className={
+                    isBullet
+                      ? 'flex gap-2 text-[14.5px] text-[#333] leading-[1.6]'
+                      : isHeaderLine
+                        ? 'text-[15px] leading-[1.6] mb-[2px]'
+                        : 'text-[14.5px] text-[#333] leading-[1.6]'
+                  }
+                >
+                  {isBullet && <span className="text-[#bbb] shrink-0">•</span>}
+                  <span>{renderInline(lineText, `${bi}-${li}`)}</span>
+                </div>
+              )
+            })}
+          </div>
+        )
+      })}
+    </>
+  )
+}
+
 // ── Message ──────────────────────────────────────────────────────────────────
 
 function UserMessage({ content }: { content: string }) {
@@ -215,20 +268,18 @@ function AssistantMessage({
   isStreaming: boolean
   onCopy: () => void
 }) {
-  const paragraphs = content.split('\n\n').filter(Boolean)
-
   return (
     <div className="flex flex-col gap-[10px]">
       {/* Response text */}
-      <div className={`text-[15px] leading-[1.75] text-[#111] ${isStreaming && !content ? 'streaming-cursor' : ''}`}>
-        {paragraphs.length > 0
-          ? paragraphs.map((p, i) => (
-              <p key={i} className="mb-3 last:mb-0 whitespace-pre-wrap">
-                {p}
-                {isStreaming && i === paragraphs.length - 1 && <span className="streaming-cursor" />}
-              </p>
-            ))
-          : isStreaming && <span className="streaming-cursor" />}
+      <div className={`text-[15px] text-[#111] ${isStreaming && !content ? 'streaming-cursor' : ''}`}>
+        {content ? (
+          <>
+            <MarkdownBlock text={content} />
+            {isStreaming && <span className="streaming-cursor" />}
+          </>
+        ) : (
+          isStreaming && <span className="streaming-cursor" />
+        )}
       </div>
 
       {/* Action icons — shown when not streaming */}
@@ -339,7 +390,15 @@ export default function Home() {
           if (!line.startsWith('data: ')) continue
           const data = line.slice(6)
           if (data === '[DONE]') continue
-          fullContent += data
+          // Backend JSON-encodes each chunk so embedded newlines survive
+          // SSE framing intact — decode it back to raw text here.
+          let chunk: string
+          try {
+            chunk = JSON.parse(data)
+          } catch {
+            chunk = data
+          }
+          fullContent += chunk
           setMessages((prev) =>
             prev.map((m) => (m.id === assistantId ? { ...m, content: fullContent } : m)),
           )

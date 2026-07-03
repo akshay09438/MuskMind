@@ -4,6 +4,7 @@ GET  /health  — liveness check
 POST /chat    — SSE streaming response via Sonnet orchestrator + Haiku retrieval
 """
 
+import json
 import os
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
@@ -70,8 +71,11 @@ class ChatRequest(BaseModel):
 
 
 async def sse_generator(user_message: str, history: list[dict]) -> AsyncGenerator[str, None]:
+    # JSON-encode each chunk so embedded newlines (paragraph breaks in the
+    # model's own output) can't be mistaken for the SSE event delimiter
+    # ("\n\n"), which would truncate or split events mid-sentence.
     for text in orchestrate(user_message, history, _retriever, _sonnet, _haiku):
-        yield f"data: {text}\n\n"
+        yield f"data: {json.dumps(text)}\n\n"
     yield "data: [DONE]\n\n"
 
 
