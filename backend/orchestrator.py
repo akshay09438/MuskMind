@@ -77,7 +77,14 @@ def route_query(user_message: str, history: list[dict], sonnet_client) -> dict:
         messages=messages,
     )
 
-    raw = response.content[0].text.strip()
+    # Find the first text block — the model may emit a thinking block first,
+    # so we can't assume content[0] is text.
+    raw = ""
+    for block in response.content:
+        text = getattr(block, "text", None)
+        if text:
+            raw = text.strip()
+            break
     # Strip markdown code fences if present
     if raw.startswith("```"):
         raw = raw.split("```")[1]
