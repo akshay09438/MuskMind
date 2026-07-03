@@ -206,6 +206,23 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
   )
 }
 
+type LineKind = 'h2' | 'h3' | 'bullet' | 'body'
+
+function classifyLine(rawLine: string): { kind: LineKind; text: string } {
+  const trimmed = rawLine.trim()
+  if (trimmed.startsWith('## ')) return { kind: 'h2', text: trimmed.slice(3) }
+  if (trimmed.startsWith('### ')) return { kind: 'h3', text: trimmed.slice(4) }
+  if (trimmed.startsWith('- ') || trimmed.startsWith('• ')) return { kind: 'bullet', text: trimmed.slice(2) }
+  return { kind: 'body', text: rawLine }
+}
+
+const LINE_STYLES: Record<LineKind, string> = {
+  h2: 'text-[17px] font-semibold text-[#111] leading-[1.4] mb-[6px]',
+  h3: 'text-[15.5px] font-semibold text-[#111] leading-[1.5] mb-[3px]',
+  bullet: 'flex gap-2 text-[14.5px] text-[#333] leading-[1.6]',
+  body: 'text-[14.5px] text-[#333] leading-[1.6]',
+}
+
 function MarkdownBlock({ text }: { text: string }) {
   const blocks = text.split('\n\n').filter(Boolean)
 
@@ -213,26 +230,26 @@ function MarkdownBlock({ text }: { text: string }) {
     <>
       {blocks.map((block, bi) => {
         const lines = block.split('\n').filter(Boolean)
-        return (
-          <div key={bi} className="mb-4 last:mb-0">
-            {lines.map((line, li) => {
-              const trimmed = line.trim()
-              const isBullet = trimmed.startsWith('- ') || trimmed.startsWith('• ')
-              const lineText = isBullet ? trimmed.slice(2) : line
-              const isHeaderLine = li === 0 && /\*\*[^*]+\*\*/.test(line)
+        const classified = lines.map(classifyLine)
+        // A block with exactly one plain body line gets extra breathing
+        // room, reproducing the reference transcript's staccato pacing
+        // for isolated one-line punch statements.
+        const isPunchLine = classified.length === 1 && classified[0].kind === 'body'
 
+        return (
+          <div key={bi} className={isPunchLine ? 'mb-5 last:mb-0' : 'mb-4 last:mb-0'}>
+            {classified.map(({ kind, text: lineText }, li) => {
+              const isVeryFirstLine = bi === 0 && li === 0
+              const topMargin = isVeryFirstLine
+                ? ''
+                : kind === 'h2'
+                  ? 'mt-4'
+                  : kind === 'h3'
+                    ? 'mt-3'
+                    : ''
               return (
-                <div
-                  key={li}
-                  className={
-                    isBullet
-                      ? 'flex gap-2 text-[14.5px] text-[#333] leading-[1.6]'
-                      : isHeaderLine
-                        ? 'text-[15px] leading-[1.6] mb-[2px]'
-                        : 'text-[14.5px] text-[#333] leading-[1.6]'
-                  }
-                >
-                  {isBullet && <span className="text-[#bbb] shrink-0">•</span>}
+                <div key={li} className={`${LINE_STYLES[kind]} ${topMargin}`}>
+                  {kind === 'bullet' && <span className="text-[#bbb] shrink-0">•</span>}
                   <span>{renderInline(lineText, `${bi}-${li}`)}</span>
                 </div>
               )
