@@ -149,7 +149,7 @@ def orchestrate(
 
     with sonnet_client.messages.stream(
         model="claude-sonnet-5",
-        max_tokens=1024,
+        max_tokens=2048,
         system=system,
         messages=messages,
     ) as stream:
