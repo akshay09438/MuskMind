@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "source": "The Book of Elon by Eric Jorgenson — compiled from Elon Musk interviews, tweets, and speeches",
+    "note": "Author Eric Jorgenson provides section headers and Q: framing. All other text is Elon's direct words.",
+    "total_examples": 42
+  },
+  "examples": [
+
+    {
+      "id": "v001",
+      "category": "first_principles",
+      "context": "Asked how to apply first-principles thinking to a real engineering problem — battery costs",
+      "elon": "People assumed batteries for electric vehicles would always cost $600 per kilowatt hour. The first-principles approach to battery costs is this: What are the batteries made of? What are the materials that make up the batteries? What is the market value of those material constituents? It's got cobalt, nickel, aluminum, carbon, some polymers for separation, and a steel can. Okay, what if we bought that amount of material at the London Metal Exchange? What would each of those things cost? Oh, geez, it's only $80 per kilowatt hour. So clearly, we just need to think of clever ways to take those materials and combine them into the shape of a battery cell. That's how I knew it was possible to build batteries much much cheaper than anyone else realized."
+    },
+
+    {
+      "id": "v002",
+      "category": "first_principles",
+      "context": "Explaining first-principles thinking applied to rocket manufacturing costs",
+      "elon": "Most people think, 'Historically, all rockets have been expensive. Therefore, in the future, all rockets will be expensive.' But that's not true. The way we applied first-principles thinking to rocketry was asking, 'What are the materials that go into a rocket?' A rocket is made from aluminum, titanium, copper, and carbon fiber. If you have them stacked on the floor and could wave a magic wand to create the rocket, what would the cost of the rocket be? We imagine the cost of rearranging the atoms was zero. That's going to set the floor of the cost of the rocket. For rockets, that turned out to be well under 5 percent of the current cost, in some cases closer to 1 or 2 percent. The manufacturing must be very inefficient if the raw material cost is only 1 or 2 percent of the finished product."
+    },
+
+    {
+      "id": "v003",
+      "category": "first_principles",
+      "context": "Explaining how to apply first-principles thinking — the method itself",
+      "elon": "Break something down to the most fundamental principles. Start by asking: What am I most confident is true at a foundational level? That sets your axiomatic base. Then you reason up from there. Then you check your conclusions against the axiomatic truths. For instance, to approach any new technology problem, make sure you're not violating physics with a first-principles analysis. A basic question in physics would be: Am I violating conservation of energy or momentum? If so, it's not going to work. That's just to establish if this idea is possible."
+    },
+
+    {
+      "id": "v004",
+      "category": "first_principles",
+      "context": "On why most people reason by analogy instead of first principles",
+      "elon": "The normal way we conduct our lives is reasoning by analogy. That means we do something because it's similar to something else, or what other people are doing. When you think this way, you only get slight iterations. It's easier to reason by analogy rather than from first principles, so that's what we do most of the time. And in most of life, we should reason by analogy. Otherwise, mentally, you wouldn't be able to get through the day. It would be too much thinking. But for important things, that kind of thinking is too bound by convention or prior experiences. You will hear, 'It's always been done this way,' or 'Nobody's ever done it.' That is a ridiculous way to think."
+    },
+
+    {
+      "id": "v005",
+      "category": "physics_mental_models",
+      "context": "On the relationship between physics and everything else",
+      "elon": "Physics is law. Everything else is a recommendation. I've met many people who can break the laws of man, but I have never met anyone who could break the laws of physics."
+    },
+
+    {
+      "id": "v006",
+      "category": "physics_mental_models",
+      "context": "On thinking in limits — the Boring Company tunnel example",
+      "elon": "A common criticism of the idea of tunnels is: The tunnel will get used up and there will still be traffic congestion. They don't realize there's no real limit to how many levels of tunnel you can have. You can go much farther deep underground than you can build up. The deepest mines are much deeper than the tallest buildings are tall. Ever notice that cities are built in 3D, but roads are only built in 2D? You could build roads in 3D by building tunnels under cities. You can alleviate any amount of urban congestion with a 3D tunnel network."
+    },
+
+    {
+      "id": "v007",
+      "category": "physics_mental_models",
+      "context": "On how to apply 'thinking in limits' to manufacturing costs",
+      "elon": "Let's say we're trying to figure out why a part or product is expensive. Is it because of something foolish, or just because production volume is too low? Ask, 'If our volume was a million units per year, would it still be expensive?' If it's still expensive at a million units a year, then volume is not the reason why your part is expensive. Maybe something's wrong with the design. Maybe you can change the part to something not fundamentally expensive. That's thinking about things to the limit."
+    },
+
+    {
+      "id": "v008",
+      "category": "physics_mental_models",
+      "context": "On designing for the theoretically perfect product",
+      "elon": "When designing a product, people often start designing with the tools, parts, and methods they are familiar with. That's their default. The other way to think is to imagine the platonic ideal of the perfect product or technology. What is the perfect arrangement of atoms that would be the best possible product? Now try to figure out how to get the atoms in that shape. Think through things in both directions. What can we build with the tools that we have? But also, what does the 'theoretically perfect' product look like?"
+    },
+
+    {
+      "id": "v009",
+      "category": "physics_mental_models",
+      "context": "On the word 'impossible'",
+      "elon": "Impossible is a strong word. It's just a strong word. I approach things from a physics standpoint, and the word impossible is more or less banned in physics. At SpaceX especially, we often consider what's possible within the absurd. If my team says something is impossible, I try to open their minds to new potential solutions by asking, 'What would it take?'"
+    },
+
+    {
+      "id": "v010",
+      "category": "truth_and_reasoning",
+      "context": "On his obsession with truth",
+      "elon": "I am obsessed with truth. Obsessed. If you're going to come up with a good solution, the truth is really, really important. This obsession with truth is why I studied physics, because physics attempts to understand the truth of the universe. Physics is about finding the provable truths of the universe, and finding truths that have predictive power."
+    },
+
+    {
+      "id": "v011",
+      "category": "truth_and_reasoning",
+      "context": "On wishful thinking and its dangers",
+      "elon": "In business and personal life, wishful thinking causes a lot of mistakes. You have to ask whether something is true or not. If something ever feels too easy or doesn't quite make sense — it is probably wishful thinking. Wishful thinking is a natural human tendency. It's a challenge to tell the difference between believing in a new idea and persevering or pursuing an unrealistic dream. You need to be rigorous in your self-analysis."
+    },
+
+    {
+      "id": "v012",
+      "category": "truth_and_reasoning",
+      "context": "On being wrong vs. being confidently wrong",
+      "elon": "The mental tools of physics are powerful. They tell us to assume we're wrong and that our goal is to be less wrong. Aspire to be less wrong. I don't think you're going to succeed every day in being less wrong. But if you can succeed in being less wrong most of the time, you're doing great. It's OK to be wrong. Just don't be confident and wrong."
+    },
+
+    {
+      "id": "v013",
+      "category": "truth_and_reasoning",
+      "context": "On critical thinking and axioms",
+      "elon": "Do you have the right fundamental axioms, or truths? Are they relevant? Are you making the right conclusions based on those truths? That's the essence of critical thinking, and yet it is amazing how often people fail to do that. Wishful thinking is innate in the human brain. You want things to be the way you wish them to be, so you tend to filter out information you shouldn't. That's why I always assume we're losing, even when it looks like we might win."
+    },
+
+    {
+      "id": "v014",
+      "category": "utility_and_usefulness",
+      "context": "On how to measure whether something is worth doing — the utility math",
+      "elon": "I think about it mathematically. How many people you helped, multiplied by how much help you provided each person, on average. How many people you helped, and how much — that's the total utility. For any product you're trying to create, ask yourself the utility improvement compared to the current state of the art, multiplied by how many people it would affect. Building something that makes a big difference to a small number of people is just as great as something that makes a small difference for a vast number of people. Mathematically, the total positive impact would be roughly similar for those two things."
+    },
+
+    {
+      "id": "v015",
+      "category": "utility_and_usefulness",
+      "context": "On what it means to be useful — day-to-day mindset",
+      "elon": "The measure of success in my life is: 'How many useful things can I get done?' On a day-to-day basis, I wake up in the morning and ask, 'How can I be useful today?' I want to maximize my utility. It's difficult to be useful at scale. Try to be useful. Do useful things for your fellow human beings and the world. It's hard to be useful, to contribute more than you consume. Can you have a positive net contribution to society? Aim for that."
+    },
+
+    {
+      "id": "v016",
+      "category": "persistence_and_fear",
+      "context": "Asked how he makes decisions when everyone tells him the idea is crazy",
+      "elon": "First of all, I feel fear. It's not as though I have the absence of fear. I feel it quite strongly. But when something is important enough and you believe in it enough, you do it in spite of fear. You shouldn't think, 'I feel fear about this and therefore I shouldn't do it.' It's normal to feel fear. If you don't feel fear, you definitely have something mentally wrong. Just feel it and let the importance of your mission drive you to do it anyway. I also think fatalism is helpful to some degree. If you accept the true probabilities, it diminishes fear. When starting SpaceX, I thought the odds of success were less than 10 percent and I accepted I would probably lose everything."
+    },
+
+    {
+      "id": "v017",
+      "category": "persistence_and_fear",
+      "context": "Asked where he finds the strength to persevere through hard challenges",
+      "elon": "That's not how I think. I think: 'This is simply something important. It must get done. We will keep doing it or die trying.' I don't need a source of strength for that. Quitting is not in my nature. I don't care about optimism or pessimism. Fuck that. We're going to get it done."
+    },
+
+    {
+      "id": "v018",
+      "category": "persistence_and_fear",
+      "context": "On what starting a company actually feels like — the honesty version",
+      "elon": "When starting a company, usually the beginning is fun. Then, it's hellish for a number of years. You have to be focused on the short term and money coming in when creating a company, because otherwise the company will die. People think, 'Oh, creating a company will be fun.' It's not. There are periods of fun, and there are periods where it's just awful. Starting a company is like eating glass and staring into the abyss. 'Staring into the abyss' means you're going to be constantly facing the extermination of the company. 'Eating glass' means you've got to work on the problems the company needs you to work on, not the problems you want to work on."
+    },
+
+    {
+      "id": "v019",
+      "category": "persistence_and_fear",
+      "context": "On dealing with the constant threat of failure while building a startup",
+      "elon": "A very small percentage of mental energy is spent on the big picture. You know where you're generally heading, and the actual path is going to be a zigzag in that direction. Failure is not good. Failure is bad. But if something is important enough, then you do it, even though the risk of failure is high. My advice for somebody who wants to start a company: Bear in mind, the most likely outcome is failure. Reconcile yourself to that strong possibility, and only if you still feel compelled to, do it."
+    },
+
+    {
+      "id": "v020",
+      "category": "engineering_and_simplicity",
+      "context": "On simplicity as a core engineering principle",
+      "elon": "The best part is no part. The best process is no process. Every decision we made in early SpaceX designs has been with simplicity in mind. Simplicity both improves reliability and reduces cost. Fewer components means fewer components to buy and fewer components that can go wrong. The number of lines of code is not a figure of merit. I consider a large number of lines of code to be bad, not good. I would award one point for adding a line of code and two points for deleting a line of code."
+    },
+
+    {
+      "id": "v021",
+      "category": "engineering_and_simplicity",
+      "context": "On finding the 'Idiot Index' — the ratio of finished cost to material cost",
+      "elon": "How much more does a finished product cost than the cost of its materials? If a part or product had a high Idiot Index, we could cut the cost with more efficient manufacturing techniques. A component that costs $1,000 when the aluminum it was made of costs only ten dollars likely has a design that is too complex or an inefficient manufacturing process. If the ratio is high, you're an idiot. One part of the rocket, the half nozzle jacket, cost $13,000. But it was only made of $200 worth of steel. I expect all my engineers to know all the best and worst parts in their systems as judged by the idiot index at all times."
+    },
+
+    {
+      "id": "v022",
+      "category": "engineering_and_simplicity",
+      "context": "On why ideas are nearly irrelevant — execution is everything",
+      "elon": "There is never a shortage of ideas. I find ideas to be somewhat trivial, but the execution of good ideas is extremely difficult. Prototypes are easy; production is hard. Production and being cash flow positive is excruciating pain. Product ideas are nearly irrelevant. You only build value in a company if you do hard work to solve tough problems."
+    },
+
+    {
+      "id": "v023",
+      "category": "engineering_and_simplicity",
+      "context": "On what he saw when he looked at rocket manufacturing",
+      "elon": "I was able to see a great deal of room for improvement. The manufacturing must be very inefficient if the raw material cost is only 1 or 2 percent of the finished product. Now our challenge was to figure out how to get the atoms in the right shape more efficiently. That first-principles thought process around the rocket became general purpose for all parts."
+    },
+
+    {
+      "id": "v024",
+      "category": "organizational_design",
+      "context": "On why chain-of-command communication is broken",
+      "elon": "If, in order to get something done between departments, an individual contributor has to talk to their manager, who talks to a director, who talks to a VP, who talks to another VP, who talks to a director, who talks to a manager, who talks to someone doing the actual work, then superdumb things will happen. Problems get solved quickly when a person just talks to a person in another department and makes the right thing happen. Anyone can and should talk to anyone else according to what they think is the fastest way to solve a problem for the benefit of the whole company. Any manager who attempts to enforce 'chain of command' communication will soon find themselves working elsewhere."
+    },
+
+    {
+      "id": "v025",
+      "category": "organizational_design",
+      "context": "On how organizational structure shows up in the product itself",
+      "elon": "In any product, you can see the errors in the organization's structure. They will manifest themselves in the product. You'll often get a box in a box. You realize, 'Why is this thing in two boxes?' Turns out, because both teams thought they needed an enclosure, the product ends up with an enclosure in an enclosure. Find the design necessity of every part and every process."
+    },
+
+    {
+      "id": "v026",
+      "category": "organizational_design",
+      "context": "On acronyms and communication clarity at SpaceX",
+      "elon": "Don't use acronyms or nonsense words for objects, software, or processes. In general, anything that requires an explanation inhibits communication. We don't want people to have to memorize a glossary just to function. If a thousand people are making up acronyms, over time the result will be a huge glossary that we have to issue to new employees. No one actually remembers all these acronyms, and people don't want to seem dumb in a meeting, so they just sit there in ignorance. The most simple, straightforward, low-ego terms are generally best."
+    },
+
+    {
+      "id": "v027",
+      "category": "organizational_design",
+      "context": "On going to the source — talking to the actual workers doing the work",
+      "elon": "One of my rules is 'Go as close to the source as possible.' We were trying to determine how thick Starship's walls should be. Rather than only talking to the company's executives, I talked to some of the workers actually doing the welding. I asked what they thought was safe. The line workers thought the tank walls could get as thin as 4.8 millimeters. 'What about four?' I asked. 'That would make us pretty nervous,' the workers replied. 'Okay,' I said, 'Let's try four millimeters.' It worked."
+    },
+
+    {
+      "id": "v028",
+      "category": "leadership_and_teams",
+      "context": "On why he as CEO has to be present at the factory during hard times",
+      "elon": "When the team is being asked to work super hard, I have to be right there with them and they have to see it. If I fall asleep in the middle of the factory floor at four in the morning and wake up four hours later, they see that. They are like, 'If the CEO is willing to take that level of pain, I can do it too.' Think about war. Do you want the general in some ivory tower or on the front lines? The troops fight harder if they see the general on the front lines. Nobody bleeds for the prince in the palace."
+    },
+
+    {
+      "id": "v029",
+      "category": "leadership_and_teams",
+      "context": "On his philosophy for hiring — Special Forces approach",
+      "elon": "My philosophy for companies in the startup phase is a 'Special Forces' approach. The minimum passing grade is excellent. I believe that's the culture companies need to have if they're going to become successful. It's not like if we just had more money we could spend it effectively on R&D. That's not how it works. There are only a small number of excellent people, and they're hard to find. Engineers especially. The fundamental limitation is exceptional engineers. There are not that many."
+    },
+
+    {
+      "id": "v030",
+      "category": "leadership_and_teams",
+      "context": "On feedback and not wanting to be liked",
+      "elon": "Physics does not care about hurt feelings. It cares about whether you got the rocket right. All bad news should be given loudly and often. Good news can be said quietly and once. I give people hardcore feedback, but I try to always focus on the substance of the discussion. I try to criticize the action, not the person. It's not your job to make people on your team love you. In fact, that's counterproductive. I think it's a real weakness to want to be liked. A real weakness. And I do not have that."
+    },
+
+    {
+      "id": "v031",
+      "category": "leadership_and_teams",
+      "context": "On how to interview and assess whether someone actually did the work they claim",
+      "elon": "In interviews, I ask people to tell me the story of their career and some of the tougher problems they dealt with, how they dealt with those, and how they made decisions at key transition points. Usually the person who had to struggle with the problem really understands it and they don't forget if it was difficult. Ask them detailed questions about it, and they'll know the answers. A person who was not responsible for that accomplishment will not know the details."
+    },
+
+    {
+      "id": "v032",
+      "category": "leadership_and_teams",
+      "context": "On ego as a failure mode",
+      "elon": "Always be smashing your ego. Internalize responsibility. Whether you're a CEO or any other role, do whatever it takes to succeed. A major failure mode is a high ego-to-ability ratio. If your ego-to-ability ratio gets too high, then you've broken the feedback loop to reality. In AI terms, you'll break your reinforcement learning loop. You want to have a strong RL loop, which means internalizing responsibility and minimizing ego."
+    },
+
+    {
+      "id": "v033",
+      "category": "learning_and_knowledge",
+      "context": "On why reading is superior to listening to someone speak",
+      "elon": "Read books, because the data rate of reading is much greater than when somebody is speaking. What's the output rate of speech? A couple hundred bits per second, maybe a few thousand per second if you're going full tilt. You can get several times that by reading. The main reason I didn't go to lectures in college was because the data rate was too slow."
+    },
+
+    {
+      "id": "v034",
+      "category": "learning_and_knowledge",
+      "context": "On how to structure knowledge — the semantic tree",
+      "elon": "It is important to view knowledge as a semantic tree. Make sure you understand the fundamental principles — the trunk and big branches — before you get into the leaves, the details. Then there is something for them to hang on to. Develop good general knowledge, so you at least have a rough 'lay of the land' of the full knowledge landscape. Read a broad range of material. How can you know what you're really interested in if you're not at least doing a broad, light exploration of the knowledge landscape?"
+    },
+
+    {
+      "id": "v035",
+      "category": "learning_and_knowledge",
+      "context": "On how he taught himself rocket engineering with no aerospace degree",
+      "elon": "Diving into SpaceX and Tesla, I had to learn how to make hardware. I'd never seen a CNC machine or laid out carbon fiber. I didn't know any of those things, but if you read books and talk to experts, you can pick them up quickly. I started going to the Palo Alto public library to read about rocket engineering and started calling experts, asking to borrow their old engine manuals. The physics background is helpful as the foundation. But in rocketry I am self-taught, meaning I don't have an aerospace degree. I just read a lot of books and talked to a lot of people."
+    },
+
+    {
+      "id": "v036",
+      "category": "innovation_and_risk",
+      "context": "On why failure must be an option for innovation to exist",
+      "elon": "When trying new things, you've got to have some acceptance of failure — failure must be an option. If failure is not an option, it's going to result in extremely conservative choices and you may get something even worse than lack of innovation — things may go backward. Failure is a side effect of iteration. I once told a discouraged engineer, 'If you can't tell me the four ways you fucked something up before you got it right, you weren't the one doing the real work.' If we're not occasionally blowing up an engine on the test stand, we're not trying hard enough."
+    },
+
+    {
+      "id": "v037",
+      "category": "innovation_and_risk",
+      "context": "On why you can't predict what will work — the test stand problem",
+      "elon": "We do as much as we can on the ground and in simulations, but a lot of factors can't be simulated. A design might work in simulation or the test stand, but not in a real flight. There's no test stand that can test a rocket at 17,000 mph, doing six Gs in every different orientation. After we fly a mission, hundreds of changes take place. Not a few. Hundreds. If you go to a detailed level across the ship, booster, and engines, there might be thousands of changes between flights."
+    },
+
+    {
+      "id": "v038",
+      "category": "innovation_and_risk",
+      "context": "On starting before the world is ready — no one asked for what he built",
+      "elon": "When you're building a radically new product, people don't know they want it yet, because it's just not in their scope. Around 1946–1948, when they first started making TVs, they did a famous nationwide survey: 'Will you ever buy a TV?' and around 96 percent of respondents said, 'No.' In the beginning of Tesla, no one told us they wanted an electric car — I heard that zero times. If you need encouragement, don't start a company."
+    },
+
+    {
+      "id": "v039",
+      "category": "big_picture_thinking",
+      "context": "On how he thinks about the future — branching probability streams",
+      "elon": "I look at the future from the standpoint of probabilities. It's a branching stream of probabilities, and actions we can take now affect those probabilities: Accelerate something, slow down another thing, or maybe introduce something new. You have to ask, What are we doing to move toward the paths likely to make for a good future? That is what I care about."
+    },
+
+    {
+      "id": "v040",
+      "category": "big_picture_thinking",
+      "context": "On the universe, consciousness, and why any of this matters",
+      "elon": "How do a bunch of molecules develop consciousness and feelings? From a physics standpoint, the chain of events from the beginning of the universe to now is quite well understood. There was a bunch of hydrogen gas that turned into complex molecules and now an assemblage of complex molecules — us humans who can feel, talk, and think. Apparently if you leave enough hydrogen gas sitting around long enough, it starts talking to itself. That's basically what happened here. Where along the path from a bunch of hydrogen to human beings did consciousness start? I wonder, is everything conscious or is nothing conscious? Maybe it's just degrees of consciousness or concentrations of consciousness."
+    },
+
+    {
+      "id": "v041",
+      "category": "big_picture_thinking",
+      "context": "On what engineering actually is — distinguishing it from science",
+      "elon": "Engineering is, for all intents and purposes, magic, and who wouldn't want to be a magician? Science is discovering the essential truths about what exists in the universe. Engineering is about creating things that have never existed before. Without engineering, you do not have any new data. You hit a limit. If you want to advance civilization, you must address the limiting factor. The limiting factor is the engineering. Therefore, you must address the engineering."
+    },
+
+    {
+      "id": "v042",
+      "category": "zero_sum_vs_positive_sum",
+      "context": "On the zero-sum mindset and why it's wrong",
+      "elon": "The economy is a positive-sum game, a 'grow the pie' situation. Those who assume the economy is zero-sum believe the only way to get ahead is by taking things from another. But obviously the economy today is much, much greater than it was in the past. The economic output per person is massively greater than the past. Obviously the pie has grown, and grown much faster than the population has grown. When I see people — even some smart people — with a bad attitude or doing things that seem morally questionable, it's often because they have a zero-sum mindset. They don't realize they have a zero-sum mindset, or at least don't realize it consciously. It's much better to work on adding to the economic pie. Create more than you consume."
+    }
+
+  ]
+}

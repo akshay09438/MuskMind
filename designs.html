@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindMusk — Final Designs</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow:hidden;background:#fff;}
+
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:#fff;border-bottom:1px solid #ebebeb;
+  display:flex;align-items:center;padding:0 20px;height:40px;
+}
+#nav .logo{color:#bbb;font-size:11px;letter-spacing:.08em;margin-right:24px;}
+.nb{background:transparent;border:none;color:#aaa;font-size:13px;padding:0 16px;height:40px;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;}
+.nb:hover{color:#111;}
+.nb.active{color:#111;font-weight:600;border-bottom-color:#111;}
+
+.design{position:fixed;top:40px;left:0;right:0;bottom:0;display:none;background:#fff;}
+.design.active{display:flex;}
+
+/* sidebar icon */
+.si{display:flex;align-items:center;gap:10px;padding:7px 12px;border-radius:7px;cursor:pointer;color:#333;font-size:14px;transition:background .12s;}
+.si:hover{background:#f2f2f2;}
+.si.active{background:#f0f0f0;}
+.si svg{flex-shrink:0;opacity:.6;}
+</style>
+</head>
+<body>
+
+<div id="nav">
+  <span class="logo">MINDMUSK</span>
+  <button class="nb active" onclick="show(0)">Base — Grok</button>
+  <button class="nb" onclick="show(1)">Variation A — Subtle</button>
+  <button class="nb" onclick="show(2)">Variation B — Bold</button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     BASE  —  100% Grok layout, adapted for MindMusk
+     White sidebar · plain text history · floating pill input
+     AI response = plain left-aligned text, no bubble
+══════════════════════════════════════════════ -->
+<div class="design active" id="d0">
+
+  <!-- SIDEBAR -->
+  <div style="width:224px;display:flex;flex-direction:column;border-right:1px solid #ebebeb;flex-shrink:0;padding:10px 8px;">
+
+    <!-- logo row -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px 10px;">
+      <!-- MindMusk mark — asterisk style like Grok -->
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <line x1="14" y1="3" x2="14" y2="25" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="3" y1="9" x2="25" y2="19" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="25" y1="9" x2="3" y2="19" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <!-- collapse arrow -->
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;">
+        <path d="M11 5L7 9L11 13" stroke="#bbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="2" y="2" width="5" height="14" rx="2" stroke="#bbb" stroke-width="1.3"/>
+      </svg>
+    </div>
+
+    <!-- nav items -->
+    <div class="si">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#444" stroke-width="1.4"/><path d="M11 11L14 14" stroke="#444" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Search
+    </div>
+    <div class="si">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3h12v8H9l-3 3V11H2V3z" stroke="#444" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      New Chat
+    </div>
+    <div class="si">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#444" stroke-width="1.4"/><path d="M5 8h6M8 5v6" stroke="#444" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Imagine
+      <div style="width:6px;height:6px;border-radius:50%;background:#3b82f6;margin-left:auto;"></div>
+    </div>
+    <div class="si">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2l4 6-4 6-4-6 4-6z" stroke="#444" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      Skills and Connectors
+    </div>
+
+    <!-- projects -->
+    <div style="padding:10px 4px 4px;">
+      <div class="si" style="justify-content:space-between;">
+        <span style="font-size:14px;color:#333;">Projects</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#aaa" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="si" style="color:#777;gap:6px;padding-left:14px;">
+        <span style="font-size:16px;color:#bbb;">+</span>
+        <span style="font-size:13px;">New Project</span>
+      </div>
+    </div>
+
+    <!-- history -->
+    <div style="padding:4px 4px 0;">
+      <div class="si" style="justify-content:space-between;">
+        <span style="font-size:14px;color:#333;">History</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#aaa" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+
+    <div style="padding:6px 12px 2px;color:#aaa;font-size:12px;">Today</div>
+    <div class="si active" style="padding:6px 12px;font-size:13px;color:#111;">My agency is struggling</div>
+
+    <div style="padding:8px 12px 2px;color:#aaa;font-size:12px;">Earlier</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">How rockets get cheap</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">AI and consciousness</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">Elon's hiring framework</div>
+
+    <div style="padding:6px 12px;">
+      <span style="font-size:13px;color:#aaa;cursor:pointer;">See all</span>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <!-- user profile -->
+    <div style="display:flex;align-items:center;gap:9px;padding:10px 10px;border-top:1px solid #ebebeb;margin-top:4px;">
+      <div style="width:30px;height:30px;border-radius:50%;background:#e85d00;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <span style="color:#fff;font-size:13px;font-weight:600;">A</span>
+      </div>
+      <div style="min-width:0;">
+        <div style="color:#111;font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Akshay bansal</div>
+        <div style="color:#aaa;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">akshay.bansal987@gmail.com</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAIN CHAT -->
+  <div style="flex:1;display:flex;flex-direction:column;position:relative;">
+
+    <!-- top right actions -->
+    <div style="position:absolute;top:14px;right:20px;display:flex;gap:12px;align-items:center;z-index:10;">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;"><circle cx="4" cy="9" r="1.5" fill="#ccc"/><circle cx="9" cy="9" r="1.5" fill="#ccc"/><circle cx="14" cy="9" r="1.5" fill="#ccc"/></svg>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;"><path d="M5 13L13 5M13 5H8M13 5V10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- messages area -->
+    <div style="flex:1;overflow:hidden;padding:40px 0 160px;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:100%;max-width:700px;padding:0 24px;display:flex;flex-direction:column;gap:24px;">
+
+        <!-- user message — right-aligned pill -->
+        <div style="display:flex;justify-content:flex-end;">
+          <div style="background:#f0f0f0;border-radius:20px;padding:10px 18px;max-width:60%;">
+            <span style="color:#111;font-size:15px;">My AI video agency is struggling. I don't know what to do.</span>
+          </div>
+        </div>
+
+        <!-- AI response — plain text, no bubble -->
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:15px;line-height:1.75;color:#111;">
+            <p style="margin-bottom:12px;">That's a hard one to sit with. Let me be direct with you.</p>
+            <p style="margin-bottom:12px;">Two things can be broken here — pipeline or delivery. They need completely different fixes. "Struggling" doesn't tell me which.</p>
+            <p>Are you not getting enough clients, or are you losing the ones you have?</p>
+          </div>
+
+          <!-- action icons -->
+          <div style="display:flex;align-items:center;gap:4px;margin-top:2px;">
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;color:#aaa;display:flex;align-items:center;" title="Copy">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="4" y="4" width="9" height="9" rx="1.5" stroke="#aaa" stroke-width="1.3"/><path d="M2 11V2h9" stroke="#aaa" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </button>
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;color:#aaa;display:flex;align-items:center;" title="Link">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M6 9l3-3M5 6.5L3.5 8A2.5 2.5 0 107 11.5L8.5 10M10 8.5L11.5 7A2.5 2.5 0 108 3.5L6.5 5" stroke="#aaa" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </button>
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;color:#aaa;display:flex;align-items:center;" title="Like">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M5 7l1-4c.5-1 1.5-1 2 0V7h3c.5 0 1 .5.8 1l-1 4H4V7H2V4h3V7z" stroke="#aaa" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            </button>
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;color:#aaa;display:flex;align-items:center;" title="Dislike">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M10 8l-1 4c-.5 1-1.5 1-2 0V8H4c-.5 0-1-.5-.8-1l1-4h6.8V8h2V11h-3V8z" stroke="#aaa" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            </button>
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;color:#aaa;display:flex;align-items:center;" title="Regenerate">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5A5.5 5.5 0 0113 7.5M13 5v2.5H10.5" stroke="#aaa" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;color:#aaa;display:flex;align-items:center;">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="3" cy="7.5" r="1.2" fill="#aaa"/><circle cx="7.5" cy="7.5" r="1.2" fill="#aaa"/><circle cx="12" cy="7.5" r="1.2" fill="#aaa"/></svg>
+            </button>
+          </div>
+
+          <!-- suggested follow-ups (like Grok) -->
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;">
+            <div style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:4px 0;" onmouseover="this.style.color='#111'" onmouseout="this.style.color='#aaa'">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3 4l4 4" stroke="#bbb" stroke-width="1.3" stroke-linecap="round"/><path d="M3 8h4V4" stroke="#bbb" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#aaa;font-size:13px;">Can't retain clients past 2 months — what does that mean?</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:4px 0;">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3 4l4 4" stroke="#bbb" stroke-width="1.3" stroke-linecap="round"/><path d="M3 8h4V4" stroke="#bbb" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#aaa;font-size:13px;">No new pipeline at all, or just slow?</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- floating Grok-style logo bottom right -->
+    <div style="position:absolute;bottom:100px;right:28px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" opacity=".12">
+        <line x1="20" y1="4" x2="20" y2="36" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+        <line x1="4" y1="12" x2="36" y2="28" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+        <line x1="36" y1="12" x2="4" y2="28" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- floating input bar -->
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 24px 24px;display:flex;justify-content:center;">
+      <div style="width:100%;max-width:700px;">
+        <div style="border:1.5px solid #ddd;border-radius:999px;padding:12px 16px;display:flex;align-items:center;gap:10px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;"><path d="M3 8h10M8 3v10" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input type="text" placeholder="Ask anything" style="flex:1;border:none;outline:none;font-size:15px;color:#111;background:transparent;"/>
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+            <span style="color:#aaa;font-size:13px;display:flex;align-items:center;gap:3px;cursor:pointer;">Fast
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5l3 3 3-3" stroke="#aaa" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;"><path d="M9 2v9M6 4l3-2 3 2M6 5C5 6 5 8 5 9a4 4 0 008 0c0-1 0-3-1-4" stroke="#aaa" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div style="width:32px;height:32px;background:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h5M13 4L7 8l6 4V4z" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     VARIATION A  —  Subtle Elon additions
+     Same exact Grok layout.
+     Added: small mode label before response · layer count
+     · rocket mark replaces asterisk · "5 layers" in top bar
+     Everything else identical — very tasteful
+══════════════════════════════════════════════ -->
+<div class="design" id="d1">
+
+  <!-- SIDEBAR — identical to base -->
+  <div style="width:224px;display:flex;flex-direction:column;border-right:1px solid #ebebeb;flex-shrink:0;padding:10px 8px;">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px 10px;">
+      <!-- rocket + MindMusk mark -->
+      <div style="display:flex;align-items:center;gap:7px;">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M11 19V13C11 8 15 3 19 3C19 7 14 11 11 13" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 19V13C11 8 7 3 3 3C3 7 8 11 11 13" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 17l-2 2M13 17l2 2" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="11" cy="8" r="1.5" fill="#111"/>
+        </svg>
+        <span style="font-size:14px;font-weight:700;color:#111;letter-spacing:-.01em;">MindMusk</span>
+      </div>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;">
+        <path d="M11 5L7 9L11 13" stroke="#bbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="2" y="2" width="5" height="14" rx="2" stroke="#bbb" stroke-width="1.3"/>
+      </svg>
+    </div>
+
+    <div class="si">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#444" stroke-width="1.4"/><path d="M11 11L14 14" stroke="#444" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Search
+    </div>
+    <div class="si">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3h12v8H9l-3 3V11H2V3z" stroke="#444" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      New Chat
+    </div>
+
+    <div style="padding:10px 4px 4px;">
+      <div class="si" style="justify-content:space-between;">
+        <span style="font-size:14px;color:#333;">History</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#aaa" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+
+    <div style="padding:6px 12px 2px;color:#aaa;font-size:12px;">Today</div>
+    <div class="si active" style="padding:6px 12px;font-size:13px;color:#111;">My agency is struggling</div>
+
+    <div style="padding:8px 12px 2px;color:#aaa;font-size:12px;">Earlier</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">How rockets get cheap</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">AI and consciousness</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">Elon's hiring framework</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">SpaceX cost structure</div>
+    <div style="padding:6px 12px;"><span style="font-size:13px;color:#aaa;cursor:pointer;">See all</span></div>
+
+    <div style="flex:1;"></div>
+
+    <div style="display:flex;align-items:center;gap:9px;padding:10px 10px;border-top:1px solid #ebebeb;margin-top:4px;">
+      <div style="width:30px;height:30px;border-radius:50%;background:#e85d00;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <span style="color:#fff;font-size:13px;font-weight:600;">A</span>
+      </div>
+      <div style="min-width:0;">
+        <div style="color:#111;font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Akshay bansal</div>
+        <div style="color:#aaa;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">akshay.bansal987@gmail.com</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAIN -->
+  <div style="flex:1;display:flex;flex-direction:column;position:relative;">
+
+    <div style="position:absolute;top:14px;right:20px;display:flex;gap:14px;align-items:center;z-index:10;">
+      <!-- 5 layers indicator — subtle addition -->
+      <div style="display:flex;align-items:flex-end;gap:2px;" title="5 knowledge layers active">
+        <div style="width:3px;height:5px;background:#ccc;border-radius:1px;"></div>
+        <div style="width:3px;height:7px;background:#ccc;border-radius:1px;"></div>
+        <div style="width:3px;height:10px;background:#aaa;border-radius:1px;"></div>
+        <div style="width:3px;height:12px;background:#888;border-radius:1px;"></div>
+        <div style="width:3px;height:14px;background:#555;border-radius:1px;"></div>
+      </div>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;"><circle cx="4" cy="9" r="1.5" fill="#ccc"/><circle cx="9" cy="9" r="1.5" fill="#ccc"/><circle cx="14" cy="9" r="1.5" fill="#ccc"/></svg>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;"><path d="M5 13L13 5M13 5H8M13 5V10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <div style="flex:1;overflow:hidden;padding:40px 0 160px;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:100%;max-width:700px;padding:0 24px;display:flex;flex-direction:column;gap:24px;">
+
+        <div style="display:flex;justify-content:flex-end;">
+          <div style="background:#f0f0f0;border-radius:20px;padding:10px 18px;max-width:60%;">
+            <span style="color:#111;font-size:15px;">My AI video agency is struggling. I don't know what to do.</span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px;">
+
+          <!-- subtle mode label — only addition vs base -->
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">
+            <span style="font-size:11px;color:#bbb;letter-spacing:.07em;font-family:monospace;">SOCRATIC &nbsp;·&nbsp; L2 · L5</span>
+          </div>
+
+          <div style="font-size:15px;line-height:1.8;color:#111;font-family:'Courier New',Courier,monospace;">
+            <p style="margin-bottom:14px;"><strong>"Struggling" tells me nothing.</strong><br>
+            Revenue down, no pipeline, or churn — which one?</p>
+            <p style="color:#888;font-style:italic;">Where exactly is the blockage?</p>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:4px;margin-top:2px;">
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;" title="Copy">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="4" y="4" width="9" height="9" rx="1.5" stroke="#ccc" stroke-width="1.3"/><path d="M2 11V2h9" stroke="#ccc" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </button>
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M5 7l1-4c.5-1 1.5-1 2 0V7h3c.5 0 1 .5.8 1l-1 4H4V7H2V4h3V7z" stroke="#ccc" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            </button>
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5A5.5 5.5 0 0113 7.5M13 5v2.5H10.5" stroke="#ccc" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;">
+            <div style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:4px 0;">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3 4l4 4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round"/><path d="M3 8h4V4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#bbb;font-size:13px;">It's mostly churn — clients leave after 2 months</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:4px 0;">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3 4l4 4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round"/><path d="M3 8h4V4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#bbb;font-size:13px;">No pipeline — I can't find new clients</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- rocket instead of asterisk — subtle, bottom right -->
+    <div style="position:absolute;bottom:100px;right:28px;opacity:.1;">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M18 32V20C18 12 24 4 30 4C30 10 24 16 18 20" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18 32V20C18 12 12 4 6 4C6 10 12 16 18 20" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 29l-3 4M21 29l3 4" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="13" r="2.5" fill="#111"/>
+      </svg>
+    </div>
+
+    <!-- input -->
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 24px 24px;display:flex;justify-content:center;">
+      <div style="width:100%;max-width:700px;">
+        <div style="border:1.5px solid #ddd;border-radius:999px;padding:12px 16px;display:flex;align-items:center;gap:10px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;"><path d="M3 8h10M8 3v10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input type="text" placeholder="Ask Elon anything..." style="flex:1;border:none;outline:none;font-size:15px;color:#111;background:transparent;"/>
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+            <span style="color:#aaa;font-size:13px;display:flex;align-items:center;gap:3px;cursor:pointer;">Fast
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5l3 3 3-3" stroke="#aaa" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </span>
+            <div style="width:32px;height:32px;background:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 8l4-4 4 4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:7px;color:#ddd;font-size:11px;letter-spacing:.05em;">MindMusk · First Principles Engine · 5 Layers Active</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     VARIATION B  —  Bold Elon personality
+     Same Grok layout.
+     Added: "Elon Musk" label with EM avatar · monospace response
+     · SpaceX rocket bottom right · launch-themed input
+     · suggested follow-ups are Elon-flavored
+══════════════════════════════════════════════ -->
+<div class="design" id="d2">
+
+  <!-- SIDEBAR -->
+  <div style="width:224px;display:flex;flex-direction:column;border-right:1px solid #ebebeb;flex-shrink:0;padding:10px 8px;">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px 10px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <!-- bold rocket logo -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 21V15C12 9 17 3 21 3C21 7 16 12 12 15" fill="#111"/>
+          <path d="M12 21V15C12 9 7 3 3 3C3 7 8 12 12 15" fill="#111"/>
+          <path d="M10 19l-2 3M14 19l2 3" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span style="font-size:15px;font-weight:700;color:#111;letter-spacing:-.02em;">MindMusk</span>
+      </div>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;">
+        <path d="M11 5L7 9L11 13" stroke="#bbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="2" y="2" width="5" height="14" rx="2" stroke="#bbb" stroke-width="1.3"/>
+      </svg>
+    </div>
+
+    <div class="si">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#444" stroke-width="1.4"/><path d="M11 11L14 14" stroke="#444" stroke-width="1.4" stroke-linecap="round"/></svg>
+      Search
+    </div>
+    <div class="si">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3h12v8H9l-3 3V11H2V3z" stroke="#444" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      New Chat
+    </div>
+
+    <div style="padding:10px 4px 4px;">
+      <div class="si" style="justify-content:space-between;">
+        <span style="font-size:14px;color:#333;">History</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="#aaa" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+
+    <div style="padding:6px 12px 2px;color:#aaa;font-size:12px;">Today</div>
+    <div class="si active" style="padding:6px 12px;font-size:13px;color:#111;">My agency is struggling</div>
+
+    <div style="padding:8px 12px 2px;color:#aaa;font-size:12px;">Earlier</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">How rockets get cheap</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">AI and consciousness</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">Elon's hiring framework</div>
+    <div class="si" style="padding:6px 12px;font-size:13px;color:#555;">SpaceX cost structure</div>
+    <div style="padding:6px 12px;"><span style="font-size:13px;color:#aaa;cursor:pointer;">See all</span></div>
+
+    <div style="flex:1;"></div>
+
+    <div style="display:flex;align-items:center;gap:9px;padding:10px 10px;border-top:1px solid #ebebeb;margin-top:4px;">
+      <div style="width:30px;height:30px;border-radius:50%;background:#e85d00;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <span style="color:#fff;font-size:13px;font-weight:600;">A</span>
+      </div>
+      <div style="min-width:0;">
+        <div style="color:#111;font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Akshay bansal</div>
+        <div style="color:#aaa;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">akshay.bansal987@gmail.com</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAIN -->
+  <div style="flex:1;display:flex;flex-direction:column;position:relative;">
+
+    <div style="position:absolute;top:14px;right:20px;display:flex;gap:12px;align-items:center;z-index:10;">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;"><circle cx="4" cy="9" r="1.5" fill="#ccc"/><circle cx="9" cy="9" r="1.5" fill="#ccc"/><circle cx="14" cy="9" r="1.5" fill="#ccc"/></svg>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;"><path d="M5 13L13 5M13 5H8M13 5V10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <div style="flex:1;overflow:hidden;padding:40px 0 160px;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:100%;max-width:700px;padding:0 24px;display:flex;flex-direction:column;gap:28px;">
+
+        <!-- user -->
+        <div style="display:flex;justify-content:flex-end;">
+          <div style="background:#f0f0f0;border-radius:20px;padding:10px 18px;max-width:60%;">
+            <span style="color:#111;font-size:15px;">My AI video agency is struggling. I don't know what to do.</span>
+          </div>
+        </div>
+
+        <!-- Elon response with avatar + name -->
+        <div style="display:flex;flex-direction:column;gap:12px;">
+
+          <!-- Elon identity row -->
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:28px;height:28px;background:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-size:10px;font-weight:700;color:#fff;font-family:monospace;">EM</span>
+            </div>
+            <div>
+              <span style="font-size:13px;font-weight:600;color:#111;">Elon Musk</span>
+              <span style="font-size:11px;color:#bbb;margin-left:8px;font-family:monospace;letter-spacing:.05em;">SOCRATIC · L2 · L5</span>
+            </div>
+          </div>
+
+          <!-- response in monospace — the only visual Elon signature -->
+          <div style="font-size:15px;line-height:1.8;color:#111;font-family:'Courier New',Courier,monospace;padding-left:38px;">
+            <p style="margin-bottom:14px;"><strong>"Struggling" tells me nothing.</strong><br>
+            Revenue down, no pipeline, or churn — which one?</p>
+            <p style="color:#777;font-style:italic;">Where exactly is the blockage?</p>
+          </div>
+
+          <!-- action icons -->
+          <div style="display:flex;align-items:center;gap:4px;margin-top:0;padding-left:38px;">
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;" title="Copy">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="4" y="4" width="9" height="9" rx="1.5" stroke="#ccc" stroke-width="1.3"/><path d="M2 11V2h9" stroke="#ccc" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </button>
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M5 7l1-4c.5-1 1.5-1 2 0V7h3c.5 0 1 .5.8 1l-1 4H4V7H2V4h3V7z" stroke="#ccc" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            </button>
+            <button style="background:none;border:none;cursor:pointer;padding:5px;border-radius:5px;">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5A5.5 5.5 0 0113 7.5M13 5v2.5H10.5" stroke="#ccc" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+          <!-- Elon-flavored follow-ups -->
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;padding-left:38px;">
+            <div style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:4px 0;">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3 4l4 4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round"/><path d="M3 8h4V4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#bbb;font-size:13px;">Churn — clients leave after month 2</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:4px 0;">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3 4l4 4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round"/><path d="M3 8h4V4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#bbb;font-size:13px;">Pipeline — can't find new clients at all</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:4px 0;">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M3 4l4 4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round"/><path d="M3 8h4V4" stroke="#ccc" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="color:#bbb;font-size:13px;">Both are broken honestly</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SpaceX-style rocket bottom right — bolder than Variation A -->
+    <div style="position:absolute;bottom:96px;right:24px;">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" opacity=".08">
+        <path d="M24 44V28C24 16 32 4 40 4C40 12 32 20 24 28" fill="#111"/>
+        <path d="M24 44V28C24 16 16 4 8 4C8 12 16 20 24 28" fill="#111"/>
+        <path d="M20 40l-4 6M28 40l4 6" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="24" cy="16" r="4" fill="#111"/>
+      </svg>
+    </div>
+
+    <!-- input -->
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 24px 24px;display:flex;justify-content:center;">
+      <div style="width:100%;max-width:700px;">
+        <div style="border:1.5px solid #ddd;border-radius:999px;padding:12px 16px;display:flex;align-items:center;gap:10px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;"><path d="M3 8h10M8 3v10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input type="text" placeholder="Ask Elon anything..." style="flex:1;border:none;outline:none;font-size:15px;color:#111;background:transparent;"/>
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+            <span style="color:#aaa;font-size:13px;display:flex;align-items:center;gap:3px;cursor:pointer;">Fast
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5l3 3 3-3" stroke="#aaa" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="cursor:pointer;opacity:.5;"><path d="M9 2v9M6 4l3-2 3 2" stroke="#666" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div style="width:32px;height:32px;background:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 8l4-4 4 4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:7px;color:#ccc;font-size:11px;letter-spacing:.05em;">MindMusk · First Principles Engine · 5 Layers Active</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+function show(idx){
+  document.querySelectorAll('.design').forEach((d,i)=>d.classList.toggle('active',i===idx));
+  document.querySelectorAll('.nb').forEach((b,i)=>b.classList.toggle('active',i===idx));
+}
+</script>
+</body>
+</html>
